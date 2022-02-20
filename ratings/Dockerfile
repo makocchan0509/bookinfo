@@ -25,7 +25,8 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 ARG service_version
-ENV SERVICE_VERSION ${service_version:-v1}
+ENV SERVICE_VERSION ${service_version:-v2}
+ENV ENABLE_RATINGS ${enable_ratings:-true}
 
 EXPOSE 9080
 CMD ["node", "/opt/microservices/ratings.js", "9080"]
